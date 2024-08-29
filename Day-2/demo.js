@@ -1,1 +1,0 @@
-console.log("Hello, this is from external js")
