@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Right click, press Inspect and goto the console tab to view output</h3>
+
+
+
+    <script>
+            // Using unary plus to convert string to number
+            let str1 = "12";
+            let num = +str1;
+            console.log(num);
+            console.log(typeof (num))  // Here we are using typeof operator
+
+            // "Abhinav" cannot be converted to a number
+            let str2 = +"Abhinav";
+            console.log(str2);
+            console.log(typeof (str2)) 
+
+            let s1='2'
+            let n1 = -s1;
+            console.log(n1);
+            console.log(typeof (n1))              
+            
+            let s2='3'
+            let n2 = ++s2;
+            console.log(n2);
+            console.log(typeof (n2))  // Here we are using typeof operator
+
+            let s3='5'
+            let n3 = s3++;
+            console.log(n3);
+            console.log(typeof (n3))
+    </script>
+</body>
+</html>
