@@ -19,7 +19,27 @@
             hll---it doesnt contains vowels
     -->
 
-    
+    <script>
+        var str1=prompt("Enter a word to check it is vowel or not");
+        console.log("Entered word is:"+str1);
+        var a=str1.toLowerCase();
+
+        function vowel(a) {
+            for(i=0;i<a.length;i++){
+                if(a[i]=="a" || a[i]=="e" || a[i]=="i" || a[i]=="o" || a[i]=="u"){
+                    window.alert("Given Word Consists Vowels");  
+                    console.log("Given Word Consists Vowels"); 
+                    break; 
+                }
+                else{
+                    window.alert("it doesn't contains vowels");
+                    console.log("it doesn't contains vowels");
+                    break;
+                }
+            }
+        }
+        vowel(a);
+    </script>
 
     
 </body>
