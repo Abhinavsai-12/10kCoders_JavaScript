@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+</head>
+<body>
+    <button onclick="cg()">Click Here</button>
+    <div>content 1</div>
+    <div>content 2</div>
+    <div>content 3</div>
+    <div>content 4</div>
+    <div>content 5</div> 
+
+    <script>
+        var count=0;
+        var arr=['black','skyblue','lightgreen','grey','blue']
+
+        function cg() {
+            
+            var a=document.getElementsByTagName("body")[0];
+            
+            a.style.backgroundColor=arr[count];
+            a.style.color="white"; 
+            a.style.fontFamily="cursive";
+            
+            count++;
+            if(count>=arr.length){
+                // count=0;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var a=10;
+        function outer() {
+            var b=12;
+            function inner() {
+                var c=15;
+                function inner2() {
+                    var d=20;
+                    console.log(a);
+                }
+                inner2();
+            }
+            inner();
+        }
+        outer();
+    </script>
+</body>
+</html>
