@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="p1">Changing bg color</h1>
+
+    <h4 class="p2">by class Name</h4>
+    <h4 class="p2">by class Name</h4>
+    <h4 class="p2">by class Name</h4>
+
+    <h3>Normal text</h3>
+
+    <div class="app">
+        <h1>Creating h2 in next line</h1>
+    </div>
+
+    <p id="id1"> This is to remove by remove method</p>
+
+    <h2 id="h22">Styling the element</h2>
+
+
+    <script>
+        //1. Changing bg color
+        var a=document.getElementById("p1");
+        a.style.backgroundColor="navy";
+        a.style.color="White";
+        console.log(a);
+
+
+        //2. select elements by class name
+        var b=document.getElementsByClassName("p2");
+        console.log(b);
+
+        //3. changing Text
+        var c=document.querySelector("h3");
+        c.innerHTML="Changed text";
+        console.log(c);
+
+        //4. create and append
+        var d1=document.querySelector(".app");
+        var d=document.createElement("h2");
+        d.innerText="h2 is created";
+        d1.appendChild(d);
+        
+
+        //5. Remove an Element
+        var e=document.getElementById("id1");
+        id1.remove();
+
+
+        // 6. Style an element
+        var f=document.getElementsByTagName("h2");
+        f[0].style.backgroundColor="navy";
+        f[0].style.color="white";
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        var nav=document.createElement("div");
+        nav.style.display="flex"; 
+        nav.style.justifyContent="space-between";
+        nav.style.padding="5px";
+        nav.style.height="8vh";
+        nav.style.width="98vw";
+        nav.style.position="relative";
+
+
+        var nav1=document.createElement("div");
+        nav1.style.paddingTop="10px";
+        var br=document.createElement("a");
+        br.innerText="BR Architecture";
+        br.style.fontSize="32px";
+        br.style.color="black";
+        br.setAttribute("href","#");
+        br.style.textDecoration="none";
+        nav1.appendChild(br);
+        nav.appendChild(nav1);
+        
+        
+        var nav2=document.createElement("div");
+        nav2.style.paddingRight="20px";
+        nav2.style.paddingTop="15px";
+        
+
+        var about1=document.createElement("a");
+        about1.innerText="About us";
+        about1.style.padding="15px";
+        about1.setAttribute("href","#");
+        about1.style.color="black";
+        about1.style.textDecoration="none";
+        about1.style.fontSize="20px";
+        nav2.appendChild(about1);
+
+        var menu1=document.createElement("a");
+        menu1.innerText="Menu";
+        menu1.style.padding="15px";
+        menu1.setAttribute("href","#");
+        menu1.style.textDecoration="none";
+        menu1.style.color="black";
+        menu1.style.fontSize="20px";
+        nav2.appendChild(menu1);
+
+        var contact1=document.createElement("a");
+        contact1.innerText="Contact Us";
+        contact1.style.padding="15px";
+        contact1.setAttribute("href","#");
+        contact1.style.textDecoration="none";
+        contact1.style.color="black";
+        contact1.style.fontSize="20px";
+        nav2.appendChild(contact1);
+        
+        nav.appendChild(nav2);
+        document.body.appendChild(nav);
+        console.log(nav);
+
+
+        //home section
+        var homee=document.createElement("div");
+
+        var home=document.createElement("div");
+        home.style.background=`url("architect.jpg")`; 
+        home.style.backgroundRepeat="no-repeat";
+        home.style.backgroundSize="cover";
+        home.style.height="95vh";
+        home.style.width="98.8vw";
+        homee.appendChild(home);
+        document.body.appendChild(homee);
+
+        // Houses
+        let text=["Summer House","Brick House" ,"Renovated House","Barn House","Brick House","Summer House","Barn House","Renovated House"];
+        let img=["https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house3.jpg"];
+        
+        var hs=document.createElement("div");  
+        hs.style.height="100vh";
+        hs.style.width="98px";
+
+        var h1=document.createElement("h1");  
+        h1.innerText="Projects";
+        h1.style.color="black";
+        h1.style.fontSize="38px";
+        h1.style.padding="50px 10px 60px 20px";
+
+        hs.appendChild(h1);
+
+        var houses=document.createElement("div");
+        houses.style.display="grid";
+        houses.style.gridTemplateColumns="auto auto auto auto";
+        houses.style.justifyContent= "space-around" ;
+        houses.style.paddingLeft="45px";
+        houses.style.gap="35px";
+        
+        for(var i=0;i<8; i++){
+            var hs1=document.createElement("div");
+            var hs2=document.createElement("div");
+
+            // element-2
+            hs1.innerHTML=text[i];
+            hs1.style.color="white";
+            hs1.style.background="black";
+            hs1.style.width="45%";
+
+            hs1.style.padding="10px";
+            hs1.style.fontSize="16px";
+
+            //element-1 
+            hs2.style.background=`url(${img[i]})`;
+            hs2.style.height="220px";
+            hs2.style.width="325px";
+            hs2.style.backgroundRepeat="no-repeat";
+            hs2.style.backgroundSize="cover";
+
+            hs2.appendChild(hs1);
+            houses.appendChild(hs2);
+            hs.appendChild(houses);
+            document.body.appendChild(hs);
+        }
+
+        
+
+    </script>
+</body>
+</html>
