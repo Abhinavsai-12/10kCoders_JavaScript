@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color:blueviolet;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw; 
+        }
+        .html{
+            background-image: url("https://media.licdn.com/dms/image/D4D12AQEaTK5_cv5Fmg/article-cover_image-shrink_720_1280/0/1677082453584?e=2147483647&v=beta&t=hy4wcIl2vOpp5lr5k74obYVN63IT-U4lydNOIo3hHGo");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw; 
+        }
+        .css{
+            background-image: url("https://ksra.eu/wp-content/uploads/2021/05/Vp9WvV7YKdH4k8sKRePcE8-1200-80.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw; 
+        } 
+        .boot{
+            background-image: url("https://www.drupal.org/files/project-images/b5-new-logo.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw; 
+        }
+        .js{
+            background-image: url("https://cyberhoot.com/wp-content/uploads/2020/07/Free-Courses-to-learn-JavaScript-1024x576.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw; 
+        }
+        button{
+            margin: 20px;
+            margin-left:60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Task:5 => by clicking the button display an image
+    -->
+
+    <div id="div1" class="div1">
+        
+        
+    </div>
+    <button onclick="html()">HTML</button>
+    <button onclick="css()">CSS</button>
+    <button onclick="boot()">Bootstrap</button>
+    <button onclick="js()">Java Script</button>
+
+
+    <script>
+	    function html(){
+            var div=document.getElementById("div1"); 
+            div.classList.toggle('html');
+        }
+
+        function css(){
+            var div=document.getElementById("div1"); 
+            div.classList.toggle('css');
+        }
+
+        function boot(){
+            var div=document.getElementById("div1"); 
+            div.classList.toggle('boot');
+        }
+
+        function js(){
+            var div=document.getElementById("div1"); 
+            div.classList.toggle('js');
+        }
+    </script>
+    
+</body>
+</html>

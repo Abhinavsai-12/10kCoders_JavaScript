@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div11{
+            background-color:blueviolet;
+            color: white;
+            padding:20px;
+            height:40vh;
+            width: 40vw;
+        }
+        .adder{
+            background-color: rgb(240, 185, 112);
+            color: black;
+            padding:20px;
+            height:40vh;
+            width: 40vw;
+        }
+        button{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Dynamic class manipulation: Write a function that adds or removes 
+        a class from an element when a button is clicked.
+    -->
+
+    <div id="div11" class="div11">
+        <p>Dynamic class manipulation: Write a function that adds or removes 
+            a class from an element when a button is clicked.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium 
+           pariatur quaerat numquam consequatur natus. Totam illum fuga eveniet 
+           maiores laudantium labore delectus repellat modi ratione, corrupti doloremque voluptates ad! Odio.
+        </p>
+    </div>
+    <button onclick="fun()">click Here</button>
+
+    <script>
+	    function fun(){
+            var div=document.getElementById("div11");
+            div.classList.toggle('adder');
+        }
+    </script>
+    
+</body>
+</html>

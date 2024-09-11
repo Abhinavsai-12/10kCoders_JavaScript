@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--     
+        Event handling: Write a script that adds a click event listener 
+        to a button that changes the text of a paragraph when clicked.
+    -->
+
+    <p>Event handling: Write a script that adds a click event listener 
+        to a button that changes the text of a paragraph when clicked.
+    </p>
+    <button>click here</button>
+
+    <script>
+        var btn=document.querySelector("button");
+        btn.addEventListener("click",fun);
+	function fun(){
+            var p=document.querySelector("p");
+            p.innerText="Responsible and motivated student ready to apply education in the workplace. Offers excellent technical abilities with software and applications, ability to handle challenging work, and excellent time management skills.";
+            p.style.background="grey";
+            p.style.padding="20px";
+            p.style.border="2px solid black";
+        }
+    </script>
+    
+</body>
+</html>
