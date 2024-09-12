@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c6e9e36f;
+        }
+
+        .container {
+            background-color: #6cd5c965;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+        }
+        #fm{
+            display: flex;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+        }
+        input{
+            width: 70%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:5px;
+        }
+        #sub{
+            width: 20%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:10px;
+        }
+        span{
+            font-size: 12px; 
+            font-weight:bold;
+            display: none;
+        }
+        </style>
+</head>
+<body>
+    <!--     
+        Task 1: Username Validation
+        Scenario: Validate a username based on specific criteria. Task:
+        Prompt the user to enter a username.
+        Check if the username contains characters in between 5 to 15 long.
+        Display a message indicating whether the username is valid or not.
+
+    -->
+
+    <div class="container">
+        <form action="" id="fm">
+            <h3>Username Validation</h3>
+            <input type="text" class="text" id="user" placeholder="Enter User name" >
+            <span></span>
+            <input type="submit" value="submit" id="sub">
+        </form>
+    </div>
+
+
+    <script>
+        var form=document.forms[0];
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            var ip=document.querySelector("input");
+            var span=document.querySelector("span");
+            if(ip.value.length>5 && ip.value.length<15){
+                span.innerHTML="valid username";
+                span.style.display="block";
+                span.style.color="green";
+            }
+            else{
+                span.innerHTML="in valid username";
+                span.style.display="block";
+                span.style.color="red";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Task 4: take prompt and Count the number of vowels in a string  hints use match method and loop method -->
+    
+    
+    <script>
+        var str=prompt("enter a string to find no of vowels");
+        str=str.toLowerCase();
+        console.log(str);
+        
+        var matches=str.match(/[aeiou]/gi);
+        var count= matches ? matches.length:0;
+        console.log("number of vowels in string "+count);
+        
+    </script>
+</body>
+</html>
