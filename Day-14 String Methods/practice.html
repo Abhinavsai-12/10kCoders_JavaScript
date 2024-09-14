@@ -4,20 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c6e9e36f;
+        }
+
+        .container {
+            background-color: #6cd5c965;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+        }
+        #fm{
+            display: flex;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+        }
+        input{
+            width: 70%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:5px;
+        }
+        #sub{
+            width: 25%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:10px;
+        }
+        span{
+            font-size: 12px; 
+            font-weight:bold;
+            display: none;
+        }
+        </style>
 </head>
 <body>
+    <!--     
+        Task 2: Email Formatter
+        Scenario: Format an email address. Task:
+        Prompt the user to enter their first and last name.
+        Convert the names to lowercase and concatenate them with a dot in between.
+        concat “@gmail.com” to the result and display the formatted email address.
+        inp: jenny and joy
+        out: jenny.joy@gmail.com
+    -->
+
+    <div class="container">
+        <form action="" id="fm">
+            <h3>Email Formater</h3>
+            <input type="text" class="text" id="user" placeholder="Enter First name" >
+            <input type="text" class="text" id="user" placeholder="Enter Last name" >
+
+            <span></span>
+            <input type="submit" value="submit" id="sub">
+            <input type="text" class="text" id="user" placeholder="your genrated email will display here" >
+            
+        </form>
+    </div>
+
 
     <script>
-        var str="Hello";
-        count=0;
-        var i=0;
+        var form=document.forms[0];
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
 
-        while(str[i]!=undefined){
-            i++;
-        }
-        console.log(i);
-        
+            var ip1=document.querySelectorAll("input")[0];
+            var ip2=document.querySelectorAll("input")[1];
+
+            res=`${ip1.value}.${ip2.value}@gmail.com`;
+            var ip3=document.querySelectorAll("input")[3];
+            ip3.setAttribute("value",res);
+
+        })
     </script>
-    
 </body>
 </html>

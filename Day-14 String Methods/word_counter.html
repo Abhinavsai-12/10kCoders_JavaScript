@@ -4,9 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c6e9e36f;
+        }
+
+        .container {
+            background-color: #6cd5c965;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+        #fm{
+            display: flex;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+        }
+        input{
+            width: 70%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:5px;
+        }
+        #sub{
+            width: 15%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:10px;
+        }
+        span{
+            font-size: 12px; 
+            font-weight:bold;
+            display: none;
+        }
+        </style>
 </head>
 <body>
-    <h2>This page is under construction </h2>
-    
+    <!--     
+        Task 3: Word Counter
+        Scenario: Count the number of words in a sentence. Task:
+        Prompt the user to enter a sentence.
+        Split the sentence into words and count them.
+        Display the word count.
+        Hint: use split and length method
+
+    -->
+
+    <div class="container">
+        <form action="" id="fm">
+            <h3>Word Counter</h3>
+            <input type="text" class="text" id="user" placeholder="Enter a sentance to find no of words present in it" >
+            <span></span>
+            <input type="submit" value="submit" id="sub">
+        </form>
+    </div>
+
+
+    <script>
+       var form=document.forms[0];
+       form.addEventListener("submit",function(){
+        event.preventDefault();
+
+        var ip=document.querySelector("input");
+        var count=ip.value.split(' ').length;
+        var span=document.querySelector("span");
+        span.innerHTML=`entered sentence consists of ${count} words`;
+        span.style.color='green';
+        span.style.display='block';
+        
+       }) 
+    </script>
 </body>
 </html>

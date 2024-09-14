@@ -4,9 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c6e9e36f;
+        }
+
+        .container {
+            background-color: #6cd5c965;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 25%;
+        }
+        #fm{
+            display: flex;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+        }
+        input{
+            width: 70%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:5px;
+        }
+        #sub{
+            width: 20%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:10px;
+        }
+        span{
+            font-size: 12px; 
+            font-weight:bold;
+            display: none;
+        }
+        </style>
 </head>
 <body>
-    <h2>This page is under construction </h2>
-    
+    <!--     
+        Task 4: Palindrome Checker
+        Scenario: Check if a given string is a palindrome. Task:
+        Prompt the user to enter a string.
+        Check if the string reads the same forwards and backwards.
+        Display a message indicating whether the string is a palindrome
+        Hints : use split,join, reverse method in arrays
+        
+        inp:john
+        out: not a palandrome
+        
+        inp:dad
+        out:it is a palandrome
+
+    -->
+
+    <div class="container">
+        <form action="" id="fm">
+            <h3>Palindrome Checker</h3>
+            <input type="text" class="text" id="user" placeholder="Enter a name to check it is palindrome or not">
+            <span></span>
+            <input type="submit" value="submit" id="sub">
+        </form>
+    </div>
+
+    <script>
+        var form=document.forms[0];
+        form.addEventListener("submit",function(){
+        event.preventDefault();
+        
+        var ip=document.querySelector("input");
+        var rev=ip.value.split('').reverse().join(''); 
+        var span=document.querySelector("span"); 
+ 
+        if(ip.value == rev){
+            span.innerHTML="given word is palindrome";
+            span.style.color='green';
+            span.style.display='block';
+        }
+        else if(ip.value != rev){
+            span.innerHTML="given word is not a palindrome";
+            span.style.color='red';
+            span.style.display='block';
+        }
+        else{
+            span.innerHTML="please enter a word to check palindrome";
+            span.style.color='red';
+            span.style.display='block';
+        } 
+       }) 
+    </script>
 </body>
 </html>
