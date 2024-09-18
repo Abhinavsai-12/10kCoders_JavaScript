@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--     
+        Task 5: Using sort
+        Objective: Sort the elements of an array.
+        Task: Create an array of random numbers. 
+        Use the sort method to sort the numbers in ascending order.
+        Expected Output: Display the sorted array.
+    -->
+    <h3>Right click, press Inspect and goto the console tab to view output</h3>
+
+
+    <script>
+        var arr=[1,2,5,10,6,20,14,9,18];
+        console.log(arr);
+        // When you subtract a - b, the result will determine the order:
+        // If a < b, the result is negative, meaning a comes before b.
+        // If a > b, the result is positive, meaning b comes before a.
+        // If a === b, the result is zero, meaning their positions remain the same.
+
+        // This simple subtraction works perfectly for numerical sorting because:
+        // For ascending order: you subtract a - b.
+        // For descending order: you subtract b - a.
+
+        console.log(arr.sort());
+        console.log(arr.sort(function(a,b){return a-b}));
+        
+    </script>
+</body>
+</html>
