@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 98vw;
+            height: 97vh;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-image: url(2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #container{
+            height: 55vh;
+            width: 50vw;
+            border: 5px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            /* background-color: aliceblue; */
+        }
+        .keyid{
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .valid{
+            font-size: 18px;
+            text-align: center;
+            padding: 25px;
+            color: white;
+        }
+        .btn{
+            padding: 10px;
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius:8px;
+            background-color: rgb(6, 103, 37);
+            color: white;
+            margin-top:25px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Quote Generator -->
+    <div class="container" id="container">
+        <div id="keyid" class="keyid"></div>
+        <div id="valid" class="valid"></div>
+    </div> 
+
+    <input class="btn" id="bt" type="button" value="Click here to Generate Quote">
+
+    <script>
+        var box = document.getElementById("container");
+
+        var obj = {
+            Javascript: "JavaScript is a High-level programming language that is primarily used to enhance the interactivity and dynamic behavior of websites.",
+            History: "Netscape programmer Brendan Eich developed a new scripting language in just 10 days. It was originally called Mocha, but later became known as JavaScript.",
+            VanillaJS: "The term vanilla JS refers to plain JavaScript without any type of additional library.",
+            Variables: "Variables store reusable values in JavaScript. They are allocated using the assignment operator (`=`).",
+            Hoisting: "Hoisting is a behavior where the declaration of variables and functions is moved to the top before execution. Only declaration is hoisted, not initialization.",
+            Operators: "JavaScript operators are used to perform different types of mathematical and logical computations.",
+            Loops: "In JavaScript, loops are used for iterating over a block of code multiple times or over array elements.",
+            Functions: "A function is a reusable block of code that performs a specific task when invoked."
+        };
+
+        var Keys = Object.keys(obj);
+        var Vals = Object.values(obj);
+
+        var c = 0;
+        var bt = document.getElementById("bt");
+
+        bt.addEventListener("click", function() {
+            var name = document.getElementById("keyid");
+            name.innerHTML = Keys[c];
+
+            var def = document.getElementById("valid");
+            def.innerHTML = Vals[c];
+
+            var bg = ['DodgerBlue', 'MediumSeaGreen', 'grey', 'Chocolate', 'slateblue', 'DarkMagenta', 'mediumseagreen', 'DarkOliveGreen'];
+            box.style.background = bg[c];
+            bt.style.background = bg[c];
+            c++;
+
+            if (c >= Keys.length) {
+                c = 0;
+            }
+        });
+    </script>
+</body>
+</html>

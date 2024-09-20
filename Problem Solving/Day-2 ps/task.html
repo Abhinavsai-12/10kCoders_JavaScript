@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--     
+        Hello all. todays practice work:
+        Write a program to check whether the number is positive, negative, or zero. Additionally, if the number is positive, check if it is even or odd.
+        eg: num=6
+            positive,even
+
+    -->
+
+    <script>
+        var a=+prompt("Enter a value");
+        if(a>0){
+            if(a%2==0){
+                console.log("it is a positive & even number");
+            }
+            else{
+                console.log("it is a positive and odd number");
+                
+            }   
+        }
+        else if(a<0){
+            console.log("it is a negative value");   
+        }
+        else if(a==0){
+            console.log("given number is Zero");
+        }
+        else{
+            console.log("entered value is wrong");
+        }
+    </script>
+</body>
+</html>
