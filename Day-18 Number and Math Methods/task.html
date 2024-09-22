@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color:rgb(165, 151, 178);
+            color: rgb(13, 13, 13);
+            font-size:38px;
+            padding:20px;
+            height:15vh;
+            width: 24vw; 
+        }
+        #cont{
+            border: 2px solid black;
+            width: 26.65vw;
+        }
+        
+        button{
+            margin: 20px;
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Task:5 => by clicking the button display an image
+    -->
+
+    <h1>Generating Random Numbers</h1>
+    <div id="cont">
+        <div id="div1" class="div1">
+        
+        
+        </div>
+        <button onclick="n10()">1-10</button>
+        <button onclick="n100()">1-100</button>
+        <button onclick="n1000()">1-1000</button>
+    </div>
+
+
+    <script>
+        var div=document.getElementById("div1"); 
+        function n10(){
+            var a=Math.round(Math.random()*10+1);
+            div.innerHTML=a;
+            console.log(a);
+            
+        }
+
+        function n100(){
+            var a=Math.round(Math.random()*100+1);
+            div.innerHTML=a;
+            console.log(a);
+        }
+
+        function n1000(){
+            var a=Math.round(Math.random()*1000+1);
+            div.innerHTML=a;
+            console.log(a);
+        }
+
+    </script>
+    
+</body>
+</html>
