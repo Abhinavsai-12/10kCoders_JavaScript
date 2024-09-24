@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    
+    <!-- <button onclick="jokes()">click here</button> -->
+    <script>
+        async function jokes(){
+            let a=await fetch("https://official-joke-api.appspot.com/random_joke");
+            let b=await a.json();
+            
+            // console.log(b);
+            // console.log(b["setup"]);
+
+            var span=document.createElement("span"); 
+            span.innerHTML="Type Of Joke:";
+            span.style.fontSize="26px";
+
+            var span1=document.createElement("span"); 
+            span1.innerHTML=b["type"];
+            var br=document.createElement("br");
+
+            var div1=document.createElement("div"); 
+            div1.innerHTML=b["setup"];
+            div1.style.fontSize="18px"
+
+            var div=document.getElementsByClassName("container")[0];
+            span.appendChild(span1);
+            div.appendChild(span);
+            div.appendChild(div1);
+            // document.body.appendChild(div);
+        }
+        jokes();
+    </script>
+</body>
+</html>

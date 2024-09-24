@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="meow()">click here</button>
+    <script>
+        async function meow(){
+            let a=await fetch("https://meowfacts.herokuapp.com/");
+            let b=await a.json();
+
+            console.log(b["data"][0]);
+
+            var div=document.createElement("div"); 
+            div.innerHTML=b["data"][0];
+            document.body.appendChild(div);
+        }
+        // meow();
+    </script>
+</body>
+</html>
