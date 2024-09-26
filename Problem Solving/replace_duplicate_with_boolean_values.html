@@ -9,26 +9,67 @@
     
 
     <script>
-        let arr=[1,2,3,1,2];
+        // Given an array arr = [222, 256, 341, 121], 
+        // write a function that returns a new array where each element is 
+        // replaced with true when the number contains no duplictates else false. 
+        // The expected output is [false, true, true, false].
+
+
+        // let arr=[222, 256, 341, 121];
+        // emp=[];
+
+        // for(i=0;i<arr.length;i++){
+        //     ele=arr[i].toString();
+        //     count=0;
+        //     duplicate=false;
+
+        //     for(j=0;j<ele.length;j++){
+        //         count=0;
+        //         for(k=0;k<ele.length;k++){
+        //             if(ele[j]==ele[k]){
+        //                 count++;
+        //             }
+        //         }
+        //     // console.log(arr[i]);
+        //     }    
+        //     if(count==1){
+        //         emp[emp.length]=arr[i];
+        //     }
+
+        // }
+        // console.log(emp);
+        
+
+
+
+        let arr=[222, 256, 341, 121];
+        emp=[];
 
         for(i=0;i<arr.length;i++){
+            ele=arr[i].toString();
             count=0;
-            for(j=i+1;j<arr.length;j++){
-                if(arr[i]==arr[j]){
-                    count++
- 
+            duplicate=false;
+
+            for(j=0;j<ele.length;j++){
+                count=0;
+                for(k=0;k<ele.length;k++){
+                    if(ele[j]==ele[k]){
+                        count++;
+                    }
                 }
+            }    
+            if(count>1){
+                duplicate=true
             }
-            if(count==0){
-                arr[i]=="*"
-                // console.log(arr[i]);
-                
+
+            if(duplicate){
+                emp[emp.length]=false
             }
             else{
-                arr[i]=="false"
+                emp[emp.length]=true;
             }
         }
-        console.log(arr);
+        console.log(emp);
         
     </script>
 </body>
