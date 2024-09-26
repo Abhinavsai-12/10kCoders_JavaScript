@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var a=[0,0,0,-1,2]
+        count=0;
+        for(i in a){
+            // console.log(a[i]);
+            if(a[i]<=0){
+                count+=1;
+            }            
+            if(count==4){
+                console.log("Start your class");
+                break;
+            }
+            else if(count<4){
+                console.log("Dont Start your class");
+                
+            }
+        }
+    </script>
+</body>
+</html>

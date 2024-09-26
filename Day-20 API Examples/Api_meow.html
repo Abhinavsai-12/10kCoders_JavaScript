@@ -7,9 +7,9 @@
 </head>
 <body>
     
-    <button onclick="meow()">click here</button>
+    <button onclick="me()">click here</button>
     <script>
-        async function meow(){
+        async function me(){
             let a=await fetch("https://meowfacts.herokuapp.com/");
             let b=await a.json();
 
@@ -19,7 +19,7 @@
             div.innerHTML=b["data"][0];
             document.body.appendChild(div);
         }
-        // meow();
+        // me();
     </script>
 </body>
 </html>

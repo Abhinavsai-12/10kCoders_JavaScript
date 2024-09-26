@@ -12,7 +12,9 @@
             font-family: 'sans-serif,Arial,Verdana, Helvetica';
         }
         body{
-            background-image: url(2.jpg);
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         h2{
             text-align: center;
@@ -28,13 +30,10 @@
         }
         #result{
             height: 35px;
-            
             text-align:left;
             padding: 6px;
             font-size: 24px;
             font-weight: 800;
-            resize: none;
-            scrollbar-width: none;
             background-color: rgb(180, 245, 248);
         }
         #date{
@@ -59,13 +58,17 @@
         function getage(){
             var user=document.getElementById("date").value;
             var date=new Date(user);
+            // console.log(user);
+            // console.log(date);
+            
+            
 
             var presentdate=new Date();
             var age=presentdate.getFullYear()-date.getFullYear();
             console.log(age);
 
             // document.getElementById("result").value =age;
-            document.getElementById("result").innerHTML =age+" is Your age";
+            document.getElementById("result").innerHTML ="Your age is: "+age;
 
         } 
     </script>

@@ -6,19 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-
-    </div>
-    
+    <div class="container"></div>
     <!-- <button onclick="jokes()">click here</button> -->
     <script>
         async function jokes(){
             let a=await fetch("https://official-joke-api.appspot.com/random_joke");
             let b=await a.json();
             
-            // console.log(b);
+            console.log(b);
             // console.log(b["setup"]);
-
             var span=document.createElement("span"); 
             span.innerHTML="Type Of Joke:";
             span.style.fontSize="26px";
@@ -31,10 +27,16 @@
             div1.innerHTML=b["setup"];
             div1.style.fontSize="18px"
 
+            var div2=document.createElement("div"); 
+            div2.innerHTML="Punchline: "+b["punchline"];
+            div2.style.fontSize="18px"
+
             var div=document.getElementsByClassName("container")[0];
             span.appendChild(span1);
             div.appendChild(span);
             div.appendChild(div1);
+            div.appendChild(div2);
+
             // document.body.appendChild(div);
         }
         jokes();
