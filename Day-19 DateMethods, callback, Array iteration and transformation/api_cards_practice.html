@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Template Example</title>
+  <style>
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 10px;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card-title {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .card-description {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cardContainer"></div>
+
+  <script>
+
+    function createCardTemplate(title, description, imageUrl) {
+     
+      const cardDiv = document.createElement('div');
+      cardDiv.classList.add('card');
+
+    
+      const imgElement = document.createElement('img');
+      imgElement.src = imageUrl;
+      imgElement.alt = title;
+      cardDiv.appendChild(imgElement);
+
+
+      const titleElement = document.createElement('h2');
+      titleElement.classList.add('card-title');
+      titleElement.textContent = title;
+      cardDiv.appendChild(titleElement);
+
+      const descriptionElement = document.createElement('p');
+      descriptionElement.classList.add('card-description');
+      descriptionElement.textContent = description;
+      cardDiv.appendChild(descriptionElement);
+
+      return cardDiv; 
+    }
+
+    
+    const cardContainer = document.getElementById('cardContainer');
+
+
+    const cardsData = [
+      {
+        title: 'Sunset in the Mountains',
+        description: 'A beautiful sunset view from the mountains.',
+        imageUrl: 'https://pixelstalk.net/wp-content/uploads/2016/08/Sunset-Beaches-Backgrounds.jpg'
+      },
+      {
+        title: 'City at Night',
+        description: 'The city comes alive at night with glowing lights.',
+        imageUrl: 'https://pixelstalk.net/wp-content/uploads/2016/08/Sunset-Beaches-Backgrounds.jpg'
+      },
+      {
+        title: 'Forest Trail',
+        description: 'A serene walk through the quiet forest.',
+        imageUrl: 'https://pixelstalk.net/wp-content/uploads/2016/08/Sunset-Beaches-Backgrounds.jpg'
+      }
+    ];
+
+    cardsData.forEach(card => {
+      const cardElement = createCardTemplate(card.title, card.description, card.imageUrl);
+      cardContainer.appendChild(cardElement); 
+    });
+  </script>
+  
+</body>
+</html>
