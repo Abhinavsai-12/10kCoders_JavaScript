@@ -9,6 +9,7 @@ const accuracyDisplay = document.getElementById('accuracy');
 const errorsDisplay = document.getElementById('errors');
 
 
+
 let timer;
 let timeLeft = 60;
 let isStarted = false;
@@ -50,7 +51,7 @@ function calculateErrors(inputText) {
     let errorCount = 0;
     const inputTextArray = inputText.split('');
     const textArray = text.split('');
-    
+
     inputTextArray.forEach((char, index) => {
         if (char !== textArray[index]) {
             errorCount++;
@@ -59,6 +60,7 @@ function calculateErrors(inputText) {
 
     return errorCount;
 }
+
 
 function updateRealTimeStats() {
     const wpm = Math.round((typedCharacters / 5) / ((60 - timeLeft) / 60));
@@ -75,6 +77,7 @@ function endTest() {
     startBtn.disabled = false;
     resultsDisplay.classList.remove('d-none');
 }
+
 
 function resetTest() {
     clearInterval(timer);
