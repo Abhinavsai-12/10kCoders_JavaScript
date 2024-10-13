@@ -20,11 +20,9 @@ body {
 .error {
     color: red;
 }
-
 .correct {
     color: green;
 }
-
 #results p {
     font-size: 1.1em;
 }
