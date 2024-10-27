@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            /* color: white; */
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-image: url(2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            background-color: rgba(166, 171, 173, 0.468);
+            padding:25px;
+            width:auto;
+            height: auto;
+        }
+        .time{
+            padding:5px 10px 5px 10px;
+            font-size:90px;
+            font-weight: 900;
+        }
+        .date{
+            padding:5px 10px 5px 10px;
+            font-size:40px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+    </div>
+
+    <script>
+        function refresh(){
+            var date=new Date();
+            var time=document.getElementById("time");
+            var date1=document.getElementById("date");
+
+            let hours=date.getHours();
+            let min=date.getMinutes();
+            let sec=date.getSeconds();
+            time.innerHTML=`${hours}:${min}:${sec}`;
+            date1.innerText=date.toDateString();
+        }
+        refresh();
+        setInterval(refresh,1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    
+    <style>
+        body{
+            font-family: Arial, sans-serif;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c6e9e36f;
+        }
+
+        .container {
+            background-color: #6cd5c965;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+        }
+        #fm{
+            display: flex;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+        }
+        input{
+            width: 70%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:5px;
+        }
+        #sub{
+            width: 20%;
+            padding: 5px;
+            margin: 10px;
+            border-radius:10px;
+        }
+        span{
+            font-size: 12px; 
+            font-weight:bold;
+            display: none;
+        }
+        </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <form action="" id="fm">
+            <h3>Password Strength Checker</h3>
+            <input type="password" id="pass" placeholder="Enter password">
+            <span></span>
+            <input type="submit" id="sub" value="submit">
+        </form>
+    </div>
+
+
+    <script>
+        var form=document.forms[0];
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+            var inp=document.getElementById("pass");
+            var span=document.querySelector("span");
+            var span=document.getElementsByTagName("span")[0];
+
+            if(inp.value.length>10){
+                span.innerHTML="password is strong";
+                span.style.display="block";
+                span.style.color="green";
+            }
+            else if(inp.value.length<=10 && inp.value.length>5){
+                span.innerHTML="password is medium";
+                span.style.display="block";
+                span.style.color="orange";
+
+            }
+            else{
+                span.innerHTML="password is week";
+                span.style.display="block";
+                span.style.color="red";
+            }
+        })
+    </script>
+</body>
+</html>
