@@ -27,8 +27,8 @@
         };
 
 
+        
         function setdata(){
-
             //  set method - used to set   data to the server
             fetch("http://localhost:3000/data", {
                 method: "POST",
@@ -37,6 +37,8 @@
                 },
                 body: JSON.stringify(obj)
             })
+
+
             .then(val=>val.json())
             .then(data=>console.log(data))
             .catch(err=>console.log("data not found"))
