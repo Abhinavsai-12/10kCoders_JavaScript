@@ -6,7 +6,6 @@
     <title>Vowels</title>
 </head>
 <body>
-
     <!-- 
         Task 5:  Vowels Function
             Scenario: Create a function that takes a string as an argument and returns weather the strings contains vowels or not .
@@ -22,25 +21,31 @@
     <script>
         var str1=prompt("Enter a word to check it is vowel or not");
         console.log("Entered word is:"+str1);
-        var a=str1.toLowerCase();
-
+        var a=str1.toLowerCase().split(" ");
+        
         function vowel(a) {
+            count =0;
             for(i=0;i<a.length;i++){
                 if(a[i]=="a" || a[i]=="e" || a[i]=="i" || a[i]=="o" || a[i]=="u"){
-                    window.alert("Given Word Consists Vowels");  
-                    console.log("Given Word Consists Vowels"); 
-                    break; 
-                }
-                else{
-                    window.alert("it doesn't contains vowels");
-                    console.log("it doesn't contains vowels");
-                    break;
+                    count+=1;
                 }
             }
-        }
-        vowel(a);
-    </script>
 
-    
+            if(count > 0){
+                window.alert("Given Word Consists Vowels");  
+                console.log("Given Word Consists Vowels");
+            }
+            else{
+                window.alert("it doesn't contains vowels");
+                console.log("it doesn't contains vowels");
+            }
+        }
+        
+        
+        // Loop through each word and check for vowels
+        a.forEach((a) => {
+            vowel(a); // Call the function for each word
+        });
+    </script>
 </body>
 </html>
