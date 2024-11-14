@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="row"></div>
+    <script>
+      var newarrdata = JSON.parse(sessionStorage.getItem("arr"));
+      console.log(newarrdata);
+
+      var iterated = newarrdata.map((val) => {
+        // console.log(val);
+        var row = document.getElementById("row");
+        var main = document.createElement("div");
+        var child1 = document.createElement("h1");
+        var child2 = document.createElement("div");
+        var child3 = document.createElement("div");
+        var child4 = document.createElement("div");
+        child1.innerHTML = val.id + " <br>";
+        child2.innerHTML = val.title + " <br>";
+        child3.innerHTML = val.description + " <br>";
+        child4.innerHTML = val.price + " <br>";
+
+        var btn = document.createElement("button");
+        btn.innerHTML = "click";
+        btn.addEventListener("click", function () {
+          main.style.display = "none";
+        });
+        main.append(child1, child2, child3, child4, btn);
+        row.appendChild(main);
+      });
+    </script>
+  </body>
+</html>

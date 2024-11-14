@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+      }
+      .container > div {
+        padding: 20px;
+        border: 1px solid red;
+      }
+      .container > div > div,
+      h1 {
+        padding: 10px;
+        border: 2px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <button onclick="cart()">cart</button>
+    </h1>
+    <div id="row" class="container"></div>
+
+    <script>
+      async function apicall() {
+        var newarr = [];
+        var result = await fetch("https://fakestoreapi.com/products");
+        var apidata = await result.json();
+        console.log(apidata);
+
+        var iterated = apidata.map((val) => {
+          // console.log(val);
+          var row = document.getElementById("row");
+          var main = document.createElement("div");
+          var child1 = document.createElement("h1");
+          var child2 = document.createElement("div");
+          var child3 = document.createElement("div");
+          var child4 = document.createElement("div");
+          child1.innerHTML = val.id + " <br>";
+          child2.innerHTML = val.title + " <br>";
+          child3.innerHTML = val.description + " <br>";
+          child4.innerHTML = val.price + " <br>";
+
+          var btn = document.createElement("button");
+          btn.innerHTML = "click";
+          btn.addEventListener("click", function () {
+            newarr.push(val);
+            sessionStorage.setItem("arr", JSON.stringify(newarr));
+          });
+
+          main.append(child1, child2, child3, child4, btn);
+          row.appendChild(main);
+        });
+      }
+      apicall();
+
+      function cart() {
+        window.open("sub.html", "_self");
+      }
+    </script>
+  </body>
+</html>
