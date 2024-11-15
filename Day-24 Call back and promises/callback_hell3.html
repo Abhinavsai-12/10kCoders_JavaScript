@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function wakeUp(callback) {
+    setTimeout(() => {
+        console.log("1. Woke up");
+        callback();
+    }, 1000);
+}
+
+function eatBreakfast(callback) {
+    setTimeout(() => {
+        console.log("2. Ate breakfast");
+        callback();
+    }, 1000);
+}
+
+function study(callback) {
+    setTimeout(() => {
+        console.log("3. Studied");
+        callback();
+    }, 1000);
+}
+
+function goToSleep(callback) {
+    setTimeout(() => {
+        console.log("4. Went to sleep");
+        callback();
+    }, 1000);
+}
+
+// The callback hell part starts here
+wakeUp(() => {
+    eatBreakfast(() => {
+        study(() => {
+            goToSleep(() => {
+                console.log("Finished all tasks!");
+            });
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

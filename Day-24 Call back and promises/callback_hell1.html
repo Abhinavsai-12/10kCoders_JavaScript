@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function first(callback) {
+        console.log("first");
+        callback();
+      }
+
+      function second(callback) {
+        console.log("second");
+        callback();
+      }
+
+      function third(callback) {
+        console.log("third");
+        callback();
+      }
+
+      function fourth(callback) {
+        console.log("fourth");
+      }
+
+      first(() => {
+        second(() => {
+          third(() => {
+            fourth();
+          });
+        });
+      });
+
+    </script>
+</body>
+</html>
