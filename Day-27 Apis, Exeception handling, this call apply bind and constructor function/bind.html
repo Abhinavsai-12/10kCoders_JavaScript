@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         function hello(city, profession) {
+        console.log( "hello my name is " + this.name + " iam from " + city + " my profesion is " + profession );
+      }
+
+      obj = {
+        name: "john",
+      };
+      var bind1 = hello.bind(obj);
+      bind1(" vizag", " senior trainer");
+
+    </script>
+</body>
+</html>
