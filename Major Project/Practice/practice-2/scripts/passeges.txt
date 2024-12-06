@@ -1,0 +1,14 @@
+// Sample Texts
+const passages = [
+    "Practice makes perfect. Typing speed tests improve your efficiency. Keep typing!",
+    "The quick brown fox jumps over the lazy dog.",
+    "HTML, CSS, and JavaScript are essential tools. Learning to code is a valuable skill.",
+    "Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.",
+    "Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming.",
+    "Java Script is a High level Programing Language that is primarly used to enhance the interactivity and dynamic behaviour of web sites. It is knowns as Scripting Languages for websites.",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit aliquam assumenda omnis quas blanditiis commodi neque, nemo ipsa quae cumque, corporis autem.",
+    "Cricket is a bat-and-ball game played between two teams of eleven players on a field, at the centre of pitch with a wicket at each end, each comprising two bails balanced on three stumps.",
+    "It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript, a programming language",
+    "A computer is a machine that can be programmed to automatically carry out sequences of arithmetic or logical operations (computation).",
+    "Modern digital electronic computers can perform generic sets of operations known as programs."    
+];

@@ -59,7 +59,7 @@ print(num)
 
 #remove
 num.remove(2)
-print(num)
+print("remove",num)
 
 #reverse
 num.reverse()

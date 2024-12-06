@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Typing Speed Test</h1>
+
+        <!-- Text Passage Display -->
+        <div id="text-passage" class="bg-light p-3 rounded border mb-3">
+            <!-- Dynamic text will be inserted here -->
+        </div>
+
+        <!-- Typing Area -->
+        <textarea id="typing-area" class="form-control mb-3" rows="4" placeholder="Start typing here..." disabled></textarea>
+
+        <!-- Timer and Results -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <span id="timer" class="badge badge-primary p-2">Time: 90s</span>
+            <span id="wpm" class="badge badge-success p-2">WPM: 0</span>
+            <span id="accuracy" class="badge badge-warning p-2">Accuracy: 0%</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center">
+            <button id="start-btn" class="btn btn-primary mr-2">Start Test</button>
+            <button id="submit-btn" class="btn btn-success mr-2" disabled>Submit</button>
+            <button id="reset-btn" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Custom JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>
+

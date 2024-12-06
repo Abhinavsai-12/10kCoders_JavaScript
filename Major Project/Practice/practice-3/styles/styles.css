@@ -1,0 +1,25 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Text Passage */
+#text-passage {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    height: 100px;
+    overflow-y: auto;
+}
+
+/* Typing Area */
+#typing-area {
+    resize: none;
+    font-size: 1rem;
+}
+
+/* Highlighting Errors */
+.error {
+    color: red;
+    text-decoration: underline;
+}

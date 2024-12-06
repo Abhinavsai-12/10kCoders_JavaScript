@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Text Passage */
+#text-passage {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    height: 100px;
+    overflow-y: auto;
+}
+
+/* Typing Area */
+#typing-area {
+    resize: none;
+    font-size: 1rem;
+}
+
+/* Highlighting Errors */
+.error {
+    color: red;
+    text-decoration: underline;
+}
+
+
+
+/* General Reset */
+body, h1, p, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Text Passage Styling */
+#text-passage {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 1.2em;
+    overflow-wrap: break-word;
+}
+
+/* Typing Area Styling */
+#typing-area {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Timer, WPM, Accuracy Styling */
+#timer, #wpm, #accuracy {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Buttons Styling */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #text-passage, #typing-area, #timer, #wpm, #accuracy {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #text-passage, #typing-area, #timer, #wpm, #accuracy {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+/* Ensure full-screen and scrolling handling */
+@media (max-width: 320px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+}
+
