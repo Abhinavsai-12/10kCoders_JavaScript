@@ -1,55 +1,90 @@
-/* style.css */
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #dedbdb;
-}
-
-.container{
-    width:45%;
-    height: auto;
-    background-color: white;
+    line-height: 1.6;
+    margin: 0;
     padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Center container with styling */
+.container {
+    max-width: 800px;
     margin: auto;
-
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-
-/* Table CSS */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px solid #ddd;
+/* Headings styling */
+h1, h2 {
+    color: #333;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-th {
-    background-color: #f0f0f0;
+/* Balance text styling */
+#balance {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* CSS for button */
+/* Form styling */
+form {
+    margin-bottom: 20px;
+}
+
+/* Input, select, and button styling */
+input, select, button {
+    padding: 8px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button base styling */
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: blue;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+/* Button hover effect */
 button:hover {
-    opacity: 0.8;
+    background-color: #45a049;
 }
-form input, form select {
-    padding: 10px;
-    margin-right: 10px;
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Delete button styling */
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+/* Export button styling */
+#exportButton {
+    background-color: #008CBA;
+}
+
+#exportButton:hover {
+    background-color: #007B9A;
 }

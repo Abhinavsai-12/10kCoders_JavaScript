@@ -3,40 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance Manager</title>
+    <meta name="Abhinav" author="Abhinav">
+    <title>Abhinav's Personal Finance Manager</title>
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Main container for the app -->
     <div class="container">
-        <h1>Personal Finance Manager</h1><br>
-        <h2 id="balance">Balance: </h2><br>
-        <form id="form">
-            <input type="text" id="des" placeholder="description" required>
-            <input type="number" id="amt" placeholder="amount" required>
+        <h1>Personal Finance Manager</h1>
+
+        <!-- Balance display -->
+        <div id="balance">Balance: &#8377;0.00</div>
+
+        <!-- Form for adding transactions -->
+        <form id="transactionForm">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" step="0.01" required>
             <select id="type">
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <button id="btn">Add Transaction</button>
+            <button type="submit">Add Transaction</button>
         </form>
-        <br>
 
-
-        <h2>Transition</h2>
-        <table id="tTable">
+        <!-- Transactions table -->
+        <h2>Transactions</h2>
+        <table id="transactionsTable">
             <thead>
                 <tr>
                     <th>Description</th>
                     <th>Amount</th>
                     <th>Type</th>
                     <th>Action</th>
-             </tr>
+                </tr>
             </thead>
             <tbody></tbody>
         </table>
-        <button id="pdf_btn">Export to PDF</button>
+
+        <!-- Export to PDF button -->
+        <button id="exportButton">Export to PDF</button>
     </div>
 
-    <script src="script2.js"></script>
+    <!-- Link to external JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
