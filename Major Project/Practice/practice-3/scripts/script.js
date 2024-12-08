@@ -24,7 +24,13 @@ const passages = [
     "The quick brown fox jumps over the lazy dog.",
     "HTML, CSS, and JavaScript are essential tools. Learning to code is a valuable skill.",
     "Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.",
-    "Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming."
+    "Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming.",
+    "Java Script is a High level Programing Language that is primarly used to enhance the interactivity and dynamic behaviour of web sites. It is knowns as Scripting Languages for websites.",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione impedit aliquam assumenda omnis quas blanditiis commodi neque, nemo ipsa quae cumque, corporis autem.",
+    "Cricket is a bat-and-ball game played between two teams of eleven players on a field, at the centre of pitch with a wicket at each end, each comprising two bails balanced on three stumps.",
+    "It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript, a programming language",
+    "A computer is a machine that can be programmed to automatically carry out sequences of arithmetic or logical operations (computation).",
+    "Modern digital electronic computers can perform generic sets of operations known as programs."  
 ];
 
 // Functions
@@ -62,6 +68,20 @@ function endTest() {
     calculateResults(); // Finalize results
 }
 
+// Highlight errors in real-time
+function highlightErrors() {
+    const typedText = typingArea.value;
+    const highlightedText = textPassage.split("").map((char, index) => {
+        if (index < typedText.length) {
+            return typedText[index] === char
+                ? `<span class="text-success">${char}</span>`
+                : `<span class="text-danger">${char}</span>`;
+        }
+        return char;
+    }).join("");
+    textPassageElement.innerHTML = highlightedText;
+}
+
 // Calculate WPM and accuracy
 function calculateResults() {
     const typedText = typingArea.value;
@@ -70,7 +90,7 @@ function calculateResults() {
     correctChars = 0;
     incorrectChars = 0;
 
-    // Compare typed text with original
+    // Compare typed text with the corresponding part of the passage
     for (let i = 0; i < totalChars; i++) {
         if (typedText[i] === textPassage[i]) {
             correctChars++;
@@ -80,29 +100,15 @@ function calculateResults() {
     }
 
     // Calculate WPM and Accuracy
-    const wpm = Math.round((correctChars / 5) / (90 / 60)); // WPM formula: (correctChars / 5) / (time in minutes)
-    const accuracy = totalChars === 0 ? 0 : Math.round((correctChars / totalChars) * 100); // Accuracy based on typed text length
+    const timeSpent = 90 - timer; // Time elapsed in seconds
+    const minutes = timeSpent / 60; // Convert to minutes
+    const wpm = Math.round((correctChars / 5) / minutes) || 0; // WPM formula
+    const accuracy = totalChars === 0 ? 0 : Math.round((correctChars / totalChars) * 100); // Accuracy formula
 
     // Update the UI
-    wpmElement.textContent = `WPM: ${wpm || 0}`;
-    accuracyElement.textContent = `Accuracy: ${accuracy || 0}%`;
+    wpmElement.textContent = `WPM: ${wpm}`;
+    accuracyElement.textContent = `Accuracy: ${accuracy}%`;
 }
-
-// Prevent modifications to already entered text
-typingArea.addEventListener("keydown", (event) => {
-    const cursorPos = typingArea.selectionStart;
-    const currentValue = typingArea.value;
-
-    // Allow typing only at the end of the current value
-    if (cursorPos !== currentValue.length) {
-        event.preventDefault(); // Prevent editing elsewhere
-    }
-
-    // Disable backspace to prevent modification
-    if (event.key === "Backspace") {
-        event.preventDefault();
-    }
-});
 
 // Submit the typing test
 function submitTest() {
@@ -122,7 +128,7 @@ function resetTest() {
     timerElement.textContent = `Time: ${timer}s`;
     wpmElement.textContent = `WPM: 0`;
     accuracyElement.textContent = `Accuracy: 0%`;
-    textPassageElement.textContent = "Click 'Start Test' to begin.";
+    textPassageElement.innerHTML = "Click 'Start Test' to begin.";
     typingArea.value = "";
     typingArea.disabled = true; // Disable typing area
     submitButton.disabled = true; // Disable submit button
@@ -132,4 +138,7 @@ function resetTest() {
 startButton.addEventListener("click", startTest); // Start test
 resetButton.addEventListener("click", resetTest); // Reset test
 submitButton.addEventListener("click", submitTest); // Submit test
-typingArea.addEventListener("input", calculateResults); // Update results on typing
+typingArea.addEventListener("input", () => {
+    highlightErrors(); // Highlight errors as the user types
+    calculateResults(); // Update WPM and accuracy
+});
